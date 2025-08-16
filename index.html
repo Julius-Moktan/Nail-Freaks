@@ -172,9 +172,11 @@ a { text-decoration: none; }
 
 #post {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns:repeat(2, 1fr);
   gap: 2rem;
-  margin: 2rem;
+  padding-block: 2rem;
+  width:min(95%, 70rem);
+  margin-inline: auto;
 }
 
 video, img {
@@ -295,17 +297,17 @@ footer {
   </div>
 </section>
 
-<section class="work" id="work">
+     <section class="work" id="work">
   <h2>Our Work</h2>
   <div id="post">
-    <div class="photo">
+    <div class="photo"><img src="https://raw.githubusercontent.com/Julius-Moktan/Nail-Freaks/refs/heads/main/Pic%201.jpg" alt="Nail art example"></div>
+    <div class="photo"><img src="https://raw.githubusercontent.com/Julius-Moktan/Nail-Freaks/refs/heads/main/PIC%202.jpg" alt="Nail design"></div>
+    <div class="photo"><img src="https://raw.githubusercontent.com/Julius-Moktan/Nail-Freaks/refs/heads/main/pic%203.jpg" alt="Customer nails"></div>
+  <div class="photo">
       <video controls>
         <source src="https://github.com/Julius-Moktan/Nail-Freaks/raw/refs/heads/main/Video%201.mp4" type="video/mp4">
       </video>
     </div>
-    <div class="photo"><img src="https://raw.githubusercontent.com/Julius-Moktan/Nail-Freaks/refs/heads/main/Pic%201.jpg" alt="Nail art example"></div>
-    <div class="photo"><img src="https://raw.githubusercontent.com/Julius-Moktan/Nail-Freaks/refs/heads/main/PIC%202.jpg" alt="Nail design"></div>
-    <div class="photo"><img src="https://raw.githubusercontent.com/Julius-Moktan/Nail-Freaks/refs/heads/main/pic%203.jpg" alt="Customer nails"></div>
   </div>
 </section>
 
