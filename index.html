@@ -79,11 +79,25 @@ nav a:hover {
   margin: 4px 0;
   transition: 0.3s;
 }
-
-h1, h2 {
+.hero h1, .hero h2 {
   font-family: 'Lobster', cursive;
   font-size: 70px;
   color: white;
+  text-align: center;
+}
+#white{
+  display:grid;
+  background-color:white;
+   justify-content: space-around; 
+  align-content: space-around;
+  margin: 10%; 
+  gap: 2rem;
+}
+
+#white h1, #white h2 {
+  font-family: 'Lobster', cursive;
+  font-size: 70px;
+  color: black;
   text-align: center;
 }
 
@@ -121,7 +135,7 @@ h1, h2 {
 a { text-decoration: none; }
 
 .about, .work {
-  background-color: pink;
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -185,6 +199,14 @@ video, img {
   border-radius: 10px;
 }
 
+.photo img, .photo video {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.photo img:hover, .photo video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
 .book {
   max-width: 1200px;
   margin: 3rem auto;
@@ -196,7 +218,7 @@ video, img {
 }
 
 .info {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.5);
   padding: 1.5rem;
   border-radius: 8px;
 }
@@ -262,6 +284,7 @@ footer {
   <p>"Welcome to Nail Freaks – your ultimate destination for stunning nails and flawless lashes. From manicures, pedicures, and creative nail art to luxurious lash extensions, we bring your beauty dreams to life in a stylish and relaxing environment."</p>
   <a href="#book" class="btn">Explore Our Services</a>
 </section>
+<div id="white">
 
 <section class="about" id="about">
   <h2>About Us</h2>
@@ -328,6 +351,7 @@ footer {
     </div>
   </div>
 </section>
+</div>
 
 <footer>
   Nail Freaks © All Rights Reserved - 2025 - Designed by Julius Moktan
@@ -337,6 +361,7 @@ footer {
 document.getElementById('menu-toggle').addEventListener('click', function() {
   document.getElementById('nav-links').classList.toggle('show');
 });
+
 </script>
 
 </body>
