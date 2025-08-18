@@ -22,7 +22,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-color: #FF007F;
+  background-color: grey;
   font-family: Arial, sans-serif;
   color: white;
 }
@@ -38,7 +38,7 @@ header {
   z-index: 1000;
 }
 
-#logo img {
+.logo{
   margin-right: 30px;
   height: 100px;
   width: auto;
@@ -79,29 +79,8 @@ nav a:hover {
   margin: 4px 0;
   transition: 0.3s;
 }
-.hero h1, .hero h2 {
-  font-family: 'Lobster', cursive;
-  font-size: 70px;
-  color: white;
-  text-align: center;
-}
-#white{
-  display:grid;
-  background-color:white;
-   justify-content: space-around; 
-  align-content: space-around;
-  margin: 5%; 
-  gap: 2rem;
-}
 
-#white h1, #white h2 {
-  font-family: 'Lobster', cursive;
-  font-size: 70px;
-  color: black;
-  text-align: center;
-}
-
-.hero {
+  .hero {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,10 +91,17 @@ nav a:hover {
   padding: 0 1rem;
 }
 
-.hero h2 { margin-top: -20px; }
 .hero p { margin-top: 25px; font-size: 20px; max-width: 800px; }
 
-.btn {
+.hero h1{
+  font-family: 'Lobster', cursive;
+  font-size: 70px;
+  text-align: center;
+  margin:0;
+  }
+
+  .btn {
+  text-decoration: none;
   margin-top: 50px;
   padding: 0.75rem 1.5rem;
   font-size: 1.1rem;
@@ -132,24 +118,91 @@ nav a:hover {
   transform: scale(1.05);
 }
 
-a { text-decoration: none; }
 
-.about, .work {
+.anim{
+ animation-name:zoomIn ;
+ animation-duration: 2s;
+}
+@keyframes zoomIn {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+    transform: scale(1.05) translateY(20px);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+p.anim {
+  animation-delay: 1s;
+}
+
+.spin{
+animation-name: spin;
+animation-duration: 3s;
+animation-timing-function: linear;
+animation-fill-mode: forwards;
+}
+
+@keyframes spin{
+  from {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.5);
+  }
+  50%{
+    transform: rotate(180deg) scale(2);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(360deg) scale(1); 
+  }
+}
+
+btn.spin{
+  animation-delay: 4s;
+}
+
+.white {
   background-color: white;
+  text-align: center;
+  margin: 0 50px; 
+  color:black;
+ 
+}
+
+.about {
+  display: flex;
+  justify-content: space-between;
+   flex-wrap: wrap;
+   gap: 2rem;
+   padding:50px;
+ }
+ 
+ .about > *{
+   flex: 1;
+ }
+
+.left {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 4rem 1rem;
-  color: #333;
-  text-align: center;
-  gap: 1rem;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
 
-.about p {
-  margin-top: 25px;
+.left p {
   font-size: 20px;
-  max-width: 900px;
+}
+
+.right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 10px; 
+  min-height: 400px;
 }
 
 #card {
@@ -162,7 +215,7 @@ a { text-decoration: none; }
 }
 
 .items {
-  background-color: purple;
+  background: radial-gradient(circle, #98fb98, #228b22, #006400);
   color: white;
   padding: 2rem;
   border-radius: 10px;
@@ -177,11 +230,20 @@ a { text-decoration: none; }
   box-shadow: 0 15px 35px rgba(0,0,0,0.25);
 }
 
+.items:first-child {
+  background: radial-gradient(circle, #ffe4e1, #b76e79, #8b5f65);
+}
+
+.items:last-child{
+  background: radial-gradient(circle, #4a6fa5, #1e3a5f, #001f3f, #000814);
+}
+
 .items h3 {
-  background-color: black;
-  padding: 20px;
-  border-radius: 50%;
+  border: 5px groove white; 
+  padding: 10px;
   margin-bottom: 20px;
+  background: radial-gradient(circle, #ffffff, #f0f0f0, #dcdcdc); 
+  color: black;
 }
 
 #post {
@@ -206,6 +268,13 @@ video, img {
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
+
+.bg{
+  background: radial-gradient(circle, #b19cd9, #8e44ad, #4b0082);
+  text-align: center;
+  margin: 0 50px; 
+  color:black;
+  }
 
 .book {
   max-width: 1200px;
@@ -260,11 +329,8 @@ footer {
 <body>
 
 <header>
-  <div id="logo">
-    <img src="https://raw.githubusercontent.com/Julius-Moktan/Nail-Freaks/main/Black%20Circle%20Modern%20Nails%20Studio%20Logo.png" alt="Nail Freaks Logo">
-  </div>
-
-  <nav>
+  <img src="https://raw.githubusercontent.com/Julius-Moktan/Nail-Freaks/main/Black%20Circle%20Modern%20Nails%20Studio%20Logo.png" alt="Nail Freaks Logo" class="logo">
+ <nav>
     <div class="menu-toggle" id="menu-toggle">
       <div></div><div></div><div></div>
     </div>
@@ -279,46 +345,56 @@ footer {
 </header>
 
 <section class="hero" id="hero">
-  <h1>Nail Freaks</h1>
-  <h2>By Jayanti Rai</h2>
-  <p>"Welcome to Nail Freaks – your ultimate destination for stunning nails and flawless lashes. From manicures, pedicures, and creative nail art to luxurious lash extensions, we bring your beauty dreams to life in a stylish and relaxing environment."</p>
-  <a href="#book" class="btn">Explore Our Services</a>
+  <h1 class="anim">Nail Freaks<br>By Jayanti Rai</h1>
+  <p class="anim">"Welcome to Nail Freaks – your ultimate destination for stunning nails and flawless lashes. From manicures, pedicures, and creative nail art to luxurious lash extensions, we bring your beauty dreams to life in a stylish and relaxing environment."</p>
+  <a href="#book" class="btn spin">Explore Our Services</a>
 </section>
-<div id="white">
+<div class="white">
 
 <section class="about" id="about">
+
+  <div class="left">
   <h2>About Us</h2>
   <p>"Hey there! Welcome to Nail Freaks, we bring beautiful nails and flawless lashes straight to your door all over Kathmandu. Since 2022, we’ve been helping our clients look and feel their best, whether it’s some creative nail art, or a set of lash extensions or refill. We love getting to know our clients and making every visit (or home service!) a fun and relaxed experience. Nails, lashes, and a little bit of pampering – that’s what we do, and we’re happy to make it easy for you!"</p>
+  </div>
+  
+<div class="right">
+<img src="https://images.unsplash.com/photo-1688583417770-ff6cc18071dc?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+</div>
 </section>
 
 <section class="services" id="services">
   <h2>Services</h2>
   <div id="card">
     <div class="items">
-      <h3>Nail Extensions</h3>
+      <h3>Nail Extensions</h3><br><br>
       <p>Nail Extensions: Rs.2500/-</p><hr><br>
       <p>Gel Nails: Rs.1500/-</p><hr><br>
       <p>Refill: Rs.1500/-</p><hr><br>
       <p>Feet Gel: Rs.1600/-</p>
+      <hr>
     </div>
     <div class="items">
-      <h3>Lash Extensions</h3>
+      <h3>Lash Extensions</h3><br><br>
       <p>Classic: Rs.3000/-</p><hr><br>
       <p>Mid Volume: Rs.4000/-</p><hr><br>
       <p>Russian Volume: Rs.5000/-</p>
+      <hr>
     </div>
     <div class="items">
-      <h3>Nail Art</h3>
+      <h3>Nail Art</h3><br><br>
       <p>French: Rs.500/-</p><hr><br>
       <p>Chrome: Rs.500/-</p><hr><br>
       <p>Cateye: Rs.500/-</p><hr><br>
       <p>Omber: Rs.800/-</p><hr><br>
       <p>Inglitter: Rs.1000/-</p><hr><br>
       <p>Stones 10: Rs.100/-</p><hr><br>
-      <p>Charms 50: Rs.200/-</p>
+      <p>Charms 50: Rs.200/-</p><hr>
     </div>
   </div>
 </section>
+
+<div class="bg">
 
      <section class="work" id="work">
   <h2>Our Work</h2>
@@ -333,6 +409,7 @@ footer {
     </div>
   </div>
 </section>
+</div>
 
 <section id="book">
   <h2>Contact</h2>
