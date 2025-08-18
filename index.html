@@ -85,15 +85,20 @@ nav a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   text-align: center;
   gap: 1rem;
   padding: 0 1rem;
 }
 
-.hero p { margin-top: 25px; font-size: 20px; max-width: 800px; }
+.hero p {
+  color:#FFC0CB;
+  margin-top: 25px; 
+  font-size: 20px; 
+  
+}
 
 .hero h1{
+  color:#FFC0CB;
   font-family: 'Lobster', cursive;
   font-size: 70px;
   text-align: center;
@@ -161,48 +166,57 @@ animation-fill-mode: forwards;
   }
 }
 
-btn.spin{
-  animation-delay: 4s;
+.btn.spin{
+  animation-delay: 3s;
 }
 
 .white {
   background-color: white;
   text-align: center;
-  margin: 0 50px; 
+  margin: 10vh 5vh 0; 
   color:black;
- 
-}
+ }
+h2{
+  color:#FFC0CB;
+  font-family: 'Lobster', cursive;
+  font-size: 70px;
+  text-align: center;
+  margin:0;
+  }
+  
+  h3{
+  font-family: 'Lobster', cursive;
+  text-align: center;
+   font-size: 30px;
+  }
 
 .about {
+  padding: 10vh 5vh 5vh;
   display: flex;
-  justify-content: space-between;
-   flex-wrap: wrap;
-   gap: 2rem;
-   padding:50px;
- }
- 
- .about > *{
-   flex: 1;
- }
-
-.left {
-  display: flex;
-  flex-direction: column;
+  gap: 2rem;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.left, .right {
+  flex: 1 1 300px;
+}
+
+.about .right img {
+  width: 100%;
+  border-radius: 8px;
 }
 
 .left p {
-  font-size: 20px;
+  font-size: 15px;
 }
 
-.right img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
-  border-radius: 10px; 
-  min-height: 400px;
+.services{
+  background-color:	#FFC0CB;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  
 }
 
 #card {
@@ -246,6 +260,11 @@ btn.spin{
   color: black;
 }
 
+.work{
+  padding-top: 10vh;
+}
+
+
 #post {
   display: grid;
   grid-template-columns:repeat(2, 1fr);
@@ -269,13 +288,6 @@ video, img {
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-.bg{
-  background: radial-gradient(circle, #b19cd9, #8e44ad, #4b0082);
-  text-align: center;
-  margin: 0 50px; 
-  color:black;
-  }
-
 .book {
   max-width: 1200px;
   margin: 3rem auto;
@@ -284,6 +296,7 @@ video, img {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
+  padding-bottom: 10vh;
 }
 
 .info {
@@ -352,14 +365,12 @@ footer {
 <div class="white">
 
 <section class="about" id="about">
-
-  <div class="left">
-  <h2>About Us</h2>
+ <div class="left">
+  <h2>About Us</h2><br><br>
   <p>"Hey there! Welcome to Nail Freaks, we bring beautiful nails and flawless lashes straight to your door all over Kathmandu. Since 2022, we’ve been helping our clients look and feel their best, whether it’s some creative nail art, or a set of lash extensions or refill. We love getting to know our clients and making every visit (or home service!) a fun and relaxed experience. Nails, lashes, and a little bit of pampering – that’s what we do, and we’re happy to make it easy for you!"</p>
-  </div>
-  
-<div class="right">
-<img src="https://images.unsplash.com/photo-1688583417770-ff6cc18071dc?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+</div>
+  <div class="right">
+  <img src="https://images.unsplash.com/photo-1688583417770-ff6cc18071dc?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
 </div>
 </section>
 
@@ -394,9 +405,9 @@ footer {
   </div>
 </section>
 
-<div class="bg">
 
-     <section class="work" id="work">
+
+<section class="work" id="work">
   <h2>Our Work</h2>
   <div id="post">
     <div class="photo"><img src="https://raw.githubusercontent.com/Julius-Moktan/Nail-Freaks/refs/heads/main/Pic%201.jpg" alt="Nail art example"></div>
@@ -409,11 +420,10 @@ footer {
     </div>
   </div>
 </section>
-</div>
 
-<section id="book">
+
+<section id="book" class="book">
   <h2>Contact</h2>
-  <div class="book">
     <div class="info">
       <h3>Address</h3>
       <p>Basundhara, Kathmandu, Nepal</p>
@@ -426,7 +436,6 @@ footer {
       <h3>Email</h3>
       <p>jayantirai723@gmail.com</p>
     </div>
-  </div>
 </section>
 </div>
 
