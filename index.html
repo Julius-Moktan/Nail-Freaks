@@ -152,26 +152,25 @@ p.anim {
   animation-delay: 1s;
 }
 
-.spin{
-animation-name: spin;
-animation-duration: 3s;
-animation-timing-function: linear;
-animation-fill-mode: forwards;
+.spin {
+  animation: bounce 2s;
 }
 
-@keyframes spin{
-  from {
-    opacity: 0;
-    transform: rotate(0deg) scale(0.5);
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
   }
-  50%{
-    transform: rotate(180deg) scale(2);
+  25% {
+    transform: translateY(-120px);
   }
-  to {
-    opacity: 1;
-    transform: rotate(360deg) scale(1); 
+  50% {
+    transform: translateY(-60px);
+  }
+  75% {
+    transform: translateY(-30px);
   }
 }
+
 
 .btn.spin{
   animation-delay: 3s;
@@ -239,7 +238,7 @@ h2{
 }
 
 .items {
-  background: radial-gradient(circle, #98ffec, #3eb489, #2e8b57);
+  background: radial-gradient(circle, #81d8d0, #40cfcf, #0abab5);
   color: white;
   padding: 2rem;
   border-radius: 10px;
@@ -252,16 +251,6 @@ h2{
 .items:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-}
-
-.items:first-child {
- background: radial-gradient(circle, #81d8d0, #40cfcf, #0abab5);
-
-}
-
-.items:last-child{
- background: radial-gradient(circle, #A2D2FF, #5DADEC, #4682B4);
-
 }
 
 .items h3 {
